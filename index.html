@@ -3,752 +3,483 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assessment Ejecutivo — Método REA · Adriana Buenrostro</title>
+<title>Assessment Ejecutivo · Método REA™ — Adriana Buenrostro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --purple:#3D2645;
-    --black:#1C1C1E;
-    --cream:#F5F0E8;
-    --gold:#A88B5C;
-    --cream-dim: rgba(245,240,232,0.72);
-    --gold-dim: rgba(168,139,92,0.35);
-  }
+/* ============================================================
+   assessment ejecutivo · método rea — adriana buenrostro
+   Construido sobre el sistema de marca v2 (2026)
+   Otoño cálido, profundo, suave — una sola tipografía: Outfit
+   ============================================================ */
 
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+:root {
+  --lino:          #F5F0E8;
+  --arena:         #ECE3D4;
+  --berenjena:     #412A3D;
+  --berenjena-2:   #573A50;
+  --espresso:      #2A211E;
+  --dorado:        #A88B5C;
+  --dorado-deep:   #8C7043;
+  --terracota:     #B26744;
 
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    background-color: var(--cream) !important;
-    color: var(--black);
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
-  }
+  --ink:           #2A211E;
+  --ink-70:        rgba(42, 33, 30, 0.70);
+  --ink-55:        rgba(42, 33, 30, 0.55);
+  --ink-40:        rgba(42, 33, 30, 0.40);
+  --ink-08:        rgba(42, 33, 30, 0.08);
+  --cream-75:      rgba(245, 240, 232, 0.75);
+  --cream-58:      rgba(245, 240, 232, 0.58);
+  --cream-40:      rgba(245, 240, 232, 0.40);
 
-  /* Reset de contenedores de Fastpages/Jekyll si existieran */
-  .wrapper, .page-content, main {
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    background: transparent !important;
-  }
+  --sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
 
-  h1,h2,h3,.serif{
-    font-family:'Playfair Display', serif;
-    font-weight:500;
-    color:var(--purple);
-    margin:0;
-    letter-spacing:-0.01em;
-  }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-  .italic-a{
-    font-style:italic;
-    color:var(--gold);
-  }
+body {
+  background: var(--lino);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-  .eyebrow{
-    font-family:'Inter', sans-serif;
-    font-weight:500;
-    font-size:0.72rem;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin-bottom:1.1rem;
-    display:block;
-  }
+a { color: var(--dorado-deep); text-decoration: none; transition: color .2s var(--ease); }
+a:hover { color: var(--berenjena); }
 
-  .wrap{
-    max-width:840px;
-    margin:0 auto;
-    padding:0 28px;
-  }
+/* ── NAV ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 200;
+  padding: 20px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(245, 240, 232, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(168, 139, 92, 0.16);
+  transition: background .45s var(--ease), border-color .45s var(--ease);
+}
+nav.on-dark { background: rgba(65, 42, 61, 0.88); border-bottom-color: rgba(168, 139, 92, 0.14); }
+.nav-mark { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 400; letter-spacing: 0.06em; color: var(--berenjena); transition: color .45s var(--ease); }
+.nav-mark .glyph { font-style: normal; font-size: 24px; line-height: 1; font-weight: 400; }
+nav.on-dark .nav-mark { color: var(--cream-75); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.14em; color: var(--ink); opacity: 0.42; transition: opacity .2s, color .45s var(--ease); }
+nav.on-dark .nav-links a { color: var(--lino); }
+.nav-links a:hover { opacity: 1; }
+.nav-right { display: flex; align-items: center; gap: 34px; }
+.nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; color: var(--berenjena); border-bottom: 1px solid var(--dorado); padding-bottom: 3px; white-space: nowrap; transition: color .45s var(--ease); }
+nav.on-dark .nav-cta { color: var(--lino); }
+.nav-cta:hover { color: var(--dorado-deep); }
 
-  a{color:inherit;}
+/* ── LAYOUT ──────────────────────────────────────── */
+.section-light { background: var(--lino); padding: 150px 0; position: relative; overflow: hidden; }
+.section-arena { background: var(--arena); padding: 150px 0; position: relative; overflow: hidden; }
+.section-dark  { background: var(--berenjena); padding: 150px 0; position: relative; overflow: hidden; }
 
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:var(--cream);
-    border-bottom:1px solid rgba(28,28,30,0.08);
-    width:100%;
-  }
-  .nav-inner{
-    max-width:840px;
-    margin:0 auto;
-    padding:18px 28px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .brand-mark{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    font-size:1rem;
-  }
-  .brand-mark .a{
-    font-family:'Playfair Display', serif;
-    font-style:italic;
-    font-weight:500;
-    color:var(--gold);
-    font-size:1.3rem;
-  }
-  .brand-mark .name{
-    font-family:'Inter', sans-serif;
-    font-weight:300;
-    letter-spacing:0.14em;
-    text-transform:lowercase;
-    font-size:0.78rem;
-    color:var(--purple);
-  }
-  .nav-cta{
-    font-size:0.82rem;
-    font-weight:500;
-    color:var(--purple);
-    text-decoration:none;
-    border-bottom:1px solid var(--gold);
-    padding-bottom:2px;
-    white-space:nowrap;
-  }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 88px; position: relative; }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:60px 0 80px;
-  }
-  .hero h1{
-    font-size:clamp(2.1rem, 4.6vw, 3.1rem);
-    line-height:1.2;
-    max-width:24ch;
-  }
-  .hero .sub{
-    margin-top:28px;
-    max-width:56ch;
-    font-size:1.08rem;
-    color:rgba(28,28,30,0.82);
-  }
-  .hero .cta-row{
-    margin-top:42px;
-    display:flex;
-    align-items:center;
-    gap:22px;
-    flex-wrap:wrap;
-  }
-  .btn{
-    display:inline-block;
-    background:var(--purple);
-    color:var(--cream);
-    font-weight:500;
-    font-size:0.92rem;
-    padding:15px 30px;
-    text-decoration:none;
-    letter-spacing:0.01em;
-    transition:background 0.25s ease;
-  }
-  .btn:hover{background:#2c1a34;}
-  .cta-note{
-    font-size:0.85rem;
-    color:rgba(28,28,30,0.55);
-  }
+.ghost {
+  position: absolute; top: -46px; right: -8px;
+  font-size: clamp(150px, 21vw, 300px); font-weight: 600; line-height: 1;
+  user-select: none; pointer-events: none;
+}
+.section-light .ghost, .section-arena .ghost { color: var(--berenjena); opacity: 0.05; }
+.section-dark  .ghost { color: var(--lino); opacity: 0.045; }
 
-  /* ---------- SECTION GENERIC ---------- */
-  section{
-    padding:86px 0;
-  }
-  section.divider-top{
-    border-top:1px solid rgba(28,28,30,0.08);
-  }
-  h2.section-title{
-    font-size:clamp(1.6rem, 3vw, 2.15rem);
-    max-width:22ch;
-    line-height:1.25;
-    margin-bottom:26px;
-  }
-  .lede{
-    max-width:62ch;
-    font-size:1.02rem;
-    color:rgba(28,28,30,0.82);
-  }
+.eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+.eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--dorado); flex-shrink: 0; }
+.eyebrow span { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: var(--dorado); }
+.section-dark .eyebrow::before { opacity: 0.85; }
+.section-dark .eyebrow span { opacity: 0.9; }
 
-  /* ---------- PROBLEM STATS ---------- */
-  .stat-row{
-    margin-top:52px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-  }
-  .stat{
-    border-left:1px solid var(--gold-dim);
-    padding-left:24px;
-  }
-  .stat .num{
-    font-family:'Playfair Display', serif;
-    font-weight:500;
-    font-size:2.6rem;
-    color:var(--purple);
-    line-height:1;
-  }
-  .stat .label{
-    margin-top:10px;
-    font-size:0.92rem;
-    color:rgba(28,28,30,0.72);
-    max-width:34ch;
-  }
-  .stat .cite{
-    display:block;
-    margin-top:10px;
-    font-size:0.76rem;
-    color:rgba(28,28,30,0.45);
-    font-style:italic;
-  }
+h1, h2 { font-family: var(--sans); font-weight: 600; line-height: 1.1; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 34px; text-wrap: pretty; }
+h1 { font-size: clamp(40px, 5.4vw, 66px); max-width: 20ch; }
+h2 { font-size: clamp(36px, 4.6vw, 58px); }
+.section-dark h1, .section-dark h2 { color: var(--lino); }
 
-  .cost-pair{
-    margin-top:56px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:36px;
-  }
-  .cost-card{
-    background:#fff;
-    border:1px solid rgba(28,28,30,0.08);
-    padding:28px 26px;
-  }
-  .cost-card h3{
-    font-size:1.05rem;
-    margin-bottom:10px;
-  }
-  .cost-card p{
-    font-size:0.94rem;
-    color:rgba(28,28,30,0.78);
-    margin:0;
-  }
+.lead { font-size: 20px; font-weight: 300; line-height: 1.65; color: var(--ink-70); max-width: 56ch; text-wrap: pretty; margin-bottom: 28px; }
+.section-dark .lead { color: var(--cream-75); }
 
-  /* ---------- METHOD ---------- */
-  .pillars{
-    margin-top:50px;
-    display:flex;
-    flex-direction:column;
-    gap:0;
-  }
-  .pillar{
-    padding:32px 0;
-    border-top:1px solid rgba(28,28,30,0.1);
-    display:grid;
-    grid-template-columns:64px 1fr;
-    gap:24px;
-  }
-  .pillar:last-child{border-bottom:1px solid rgba(28,28,30,0.1);}
-  .pillar .mark{
-    font-family:'Playfair Display', serif;
-    font-style:italic;
-    font-weight:500;
-    color:var(--gold-dim);
-    font-size:1rem;
-    padding-top:4px;
-  }
-  .pillar h3{
-    font-size:1.18rem;
-  }
-  .pillar .source{
-    font-size:0.82rem;
-    color:var(--purple);
-    opacity:0.7;
-    margin:6px 0 12px;
-    font-style:italic;
-  }
-  .pillar p{
-    font-size:0.96rem;
-    color:rgba(28,28,30,0.8);
-    margin:0;
-    max-width:58ch;
-  }
-  .pillar .evidence{
-    margin-top:12px;
-    font-size:0.86rem;
-    color:rgba(28,28,30,0.6);
-    border-left:2px solid var(--gold-dim);
-    padding-left:14px;
-  }
+.body { font-size: 16px; font-weight: 400; line-height: 1.85; color: var(--ink-70); max-width: 62ch; text-wrap: pretty; }
+.section-dark .body { color: var(--cream-58); }
+.body strong, .lead strong { font-weight: 600; color: var(--ink); }
+.section-dark .body strong { color: var(--lino); }
 
-  .differentiator{
-    margin-top:54px;
-    background:var(--purple);
-    color:var(--cream);
-    padding:44px 40px;
-  }
-  .differentiator .eyebrow{color:var(--gold);}
-  .differentiator h3{
-    color:var(--cream);
-    font-size:1.3rem;
-    margin-bottom:14px;
-  }
-  .differentiator p{
-    color:var(--cream-dim);
-    font-size:0.98rem;
-    max-width:62ch;
-    margin:0 0 10px;
-  }
-  .differentiator .evidence{
-    font-size:0.84rem;
-    color:rgba(245,240,232,0.55);
-    font-style:italic;
-  }
+.two-col { display: grid; grid-template-columns: 1fr 1.5fr; gap: 88px; align-items: start; }
 
-  /* ---------- TIMELINE ---------- */
-  .timeline{
-    margin-top:56px;
-    position:relative;
-  }
-  .timeline::before{
-    content:"";
-    position:absolute;
-    left:23px;
-    top:10px;
-    bottom:10px;
-    width:1px;
-    background:linear-gradient(to bottom, var(--gold), var(--gold-dim));
-  }
-  .tl-item{
-    position:relative;
-    padding:0 0 52px 64px;
-  }
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:attr(data-n);
-    position:absolute;
-    left:0;
-    top:0;
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:var(--cream);
-    border:1px solid var(--gold);
-    color:var(--purple);
-    font-family:'Playfair Display', serif;
-    font-weight:500;
-    font-size:0.95rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .tl-item .tl-week{
-    font-size:0.74rem;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-weight:500;
-  }
-  .tl-item h3{
-    font-size:1.15rem;
-    margin:6px 0 12px;
-  }
-  .tl-item ul{
-    margin:0;
-    padding:0;
-    list-style:none;
-  }
-  .tl-item li{
-    font-size:0.94rem;
-    color:rgba(28,28,30,0.78);
-    padding-left:18px;
-    position:relative;
-    margin-bottom:6px;
-  }
-  .tl-item li::before{
-    content:"—";
-    position:absolute;
-    left:0;
-    color:var(--gold-dim);
-  }
+/* ── HERO ────────────────────────────────────────── */
+#hero { padding-top: 200px; }
+.hero-sub { font-size: 20px; font-weight: 300; line-height: 1.65; color: var(--ink-70); max-width: 58ch; margin-bottom: 46px; text-wrap: pretty; }
+.cta-row { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--berenjena); color: var(--lino); font-weight: 500; font-size: 14px; letter-spacing: 0.02em; padding: 17px 34px; transition: background .25s var(--ease); }
+.btn:hover { background: var(--berenjena-2); color: var(--lino); }
+.cta-note { font-size: 13px; color: var(--ink-40); letter-spacing: 0.02em; }
 
-  .deliverables{
-    margin-top:70px;
-    background:#fff;
-    border:1px solid rgba(28,28,30,0.08);
-    padding:38px 36px;
-  }
-  .deliverables h3{
-    font-size:1.1rem;
-    margin-bottom:20px;
-  }
-  .deliverables ol{
-    margin:0;
-    padding:0 0 0 20px;
-    font-size:0.95rem;
-    color:rgba(28,28,30,0.82);
-  }
-  .deliverables li{margin-bottom:10px;}
-  .deliverables li:last-child{margin-bottom:0;}
+/* ── EL PROBLEMA ─────────────────────────────────── */
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 64px; background: rgba(42,33,30,0.08); }
+.stat { background: var(--arena); padding: 40px 38px; }
+.stat .num { font-size: clamp(48px, 5vw, 64px); font-weight: 600; color: var(--berenjena); line-height: 1; }
+.stat .label { margin-top: 14px; font-size: 15px; color: var(--ink-70); max-width: 34ch; line-height: 1.6; }
+.stat .cite { display: block; margin-top: 14px; font-size: 11px; letter-spacing: 0.06em; color: var(--ink-40); }
 
-  .result-line{
-    margin-top:40px;
-    font-family:'Playfair Display', serif;
-    font-style:italic;
-    font-size:1.2rem;
-    color:var(--purple);
-    max-width:46ch;
-    line-height:1.5;
-  }
+.cost-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; background: rgba(42,33,30,0.08); }
+.cost-card { background: var(--lino); padding: 34px 32px; }
+.cost-card h3 { font-size: 17px; font-weight: 600; color: var(--berenjena); margin-bottom: 12px; }
+.cost-card p { font-size: 15px; color: var(--ink-70); line-height: 1.75; }
 
-  /* ---------- FACILITATOR ---------- */
-  .facilitator{
-    background:var(--purple);
-    color:var(--cream);
-    padding:96px 0;
-  }
-  .facilitator .eyebrow{color:var(--gold);}
-  .facilitator .fname{
-    font-size:clamp(1.8rem, 3.4vw, 2.4rem);
-    font-style:italic;
-    color:var(--cream);
-    margin-bottom:8px;
-  }
-  .facilitator .role{
-    font-size:0.98rem;
-    color:var(--gold);
-    margin-bottom:32px;
-    font-weight:500;
-  }
-  .facilitator p{
-    color:var(--cream-dim);
-    font-size:1.01rem;
-    max-width:64ch;
-    margin:0 0 20px;
-  }
-  .facilitator p:last-of-type{margin-bottom:0;}
-  .facilitator strong{color:var(--cream); font-weight:500;}
+/* ── LA METODOLOGÍA ──────────────────────────────── */
+.pos-list { display: grid; gap: 22px; margin-top: 56px; }
+.pos-row { display: flex; gap: 22px; align-items: flex-start; }
+.pos-bar { width: 1px; align-self: stretch; background: var(--dorado); opacity: 0.5; flex-shrink: 0; margin-top: 6px; }
+.pos-row h3 { font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.pos-source { display: block; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: var(--dorado-deep); margin-bottom: 10px; }
+.pos-row p.body { margin-bottom: 10px; }
+.pos-evidence { font-size: 13.5px; color: var(--ink-55); border-left: 2px solid rgba(168,139,92,0.35); padding-left: 14px; max-width: 58ch; line-height: 1.7; }
 
-  /* ---------- CLOSING CTA ---------- */
-  .closing{
-    padding:100px 0 90px;
-    text-align:left;
-  }
-  .closing blockquote{
-    margin:0 0 44px;
-    font-family:'Playfair Display', serif;
-    font-weight:400;
-    font-size:clamp(1.3rem, 2.6vw, 1.65rem);
-    line-height:1.5;
-    color:var(--purple);
-    max-width:52ch;
-  }
-  .closing .cta-row{
-    display:flex;
-    align-items:center;
-    gap:22px;
-    flex-wrap:wrap;
-  }
+/* ── DIFERENCIADOR / CITAS ───────────────────────── */
+.core-quote { font-size: clamp(22px, 2.7vw, 32px); font-weight: 500; color: var(--berenjena); line-height: 1.4; letter-spacing: -0.01em; border-left: 2px solid var(--dorado); padding-left: 34px; margin-bottom: 30px; text-wrap: pretty; max-width: 62ch; }
+.evidence-note { font-size: 12px; letter-spacing: 0.03em; color: var(--ink-40); max-width: 60ch; line-height: 1.7; padding-left: 36px; }
 
-  /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid rgba(28,28,30,0.1);
-    padding:48px 0 60px;
-  }
-  .footer-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    flex-wrap:wrap;
-    gap:24px;
-  }
-  .sources{
-    margin-top:36px;
-    font-size:0.76rem;
-    color:rgba(28,28,30,0.45);
-    line-height:1.8;
-  }
-  .sources .stitle{
-    display:block;
-    text-transform:uppercase;
-    letter-spacing:0.12em;
-    font-weight:500;
-    color:rgba(28,28,30,0.55);
-    margin-bottom:8px;
-  }
-  .copyright{
-    margin-top:34px;
-    font-size:0.78rem;
-    color:rgba(28,28,30,0.4);
-  }
+/* ── TIMELINE ────────────────────────────────────── */
+.timeline { margin-top: 60px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 23px; top: 10px; bottom: 10px; width: 1px; background: linear-gradient(to bottom, var(--dorado), rgba(168,139,92,0.15)); }
+.tl-item { position: relative; padding: 0 0 54px 66px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before { content: attr(data-n); position: absolute; left: 0; top: 0; width: 48px; height: 48px; border-radius: 50%; background: var(--lino); border: 1px solid var(--dorado); color: var(--berenjena); font-weight: 600; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+.tl-week { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dorado-deep); font-weight: 500; }
+.tl-item h3 { font-size: 19px; font-weight: 600; color: var(--ink); margin: 8px 0 14px; }
+.tl-item ul { list-style: none; }
+.tl-item li { font-size: 15px; color: var(--ink-70); padding-left: 18px; position: relative; margin-bottom: 8px; line-height: 1.6; }
+.tl-item li::before { content: "—"; position: absolute; left: 0; color: rgba(168,139,92,0.55); }
 
-  /* ---------- REVEAL ---------- */
-  .reveal{
-    opacity:1;
-    transform:none;
-    transition:opacity 0.7s ease, transform 0.7s ease;
-  }
-  .js-enabled .reveal{
-    opacity:0;
-    transform:translateY(14px);
-  }
-  .js-enabled .reveal.in{
-    opacity:1;
-    transform:none;
-  }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-    html{scroll-behavior:auto;}
-  }
+.deliverables { margin-top: 74px; background: var(--arena); padding: 40px 38px; }
+.deliverables h3 { font-size: 17px; font-weight: 600; color: var(--berenjena); margin-bottom: 22px; }
+.deliverables ol { padding-left: 20px; font-size: 15px; color: var(--ink-70); line-height: 1.7; }
+.deliverables li { margin-bottom: 10px; }
+.deliverables li:last-child { margin-bottom: 0; }
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:720px){
-    .stat-row, .cost-pair{grid-template-columns:1fr;}
-    .pillar{grid-template-columns:40px 1fr;}
-    .differentiator{padding:32px 24px;}
-    .facilitator{padding:72px 0;}
-    .closing{padding:72px 0;}
-  }
+.result-line { margin-top: 56px; text-align: center; }
+.result-line p { font-size: clamp(20px, 2.3vw, 26px); font-weight: 500; color: var(--berenjena); max-width: 50ch; margin: 0 auto; line-height: 1.55; }
+
+/* ── CIERRE ──────────────────────────────────────── */
+.closing-block { margin-top: 8px; }
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer { background: var(--espresso); padding: 60px 88px 50px; }
+.footer-inner { max-width: 1140px; margin: 0 auto; }
+.footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-bottom: 34px; border-bottom: 1px solid rgba(245,240,232,0.1); }
+.footer-mark { display: flex; align-items: center; gap: 14px; font-size: 15px; font-weight: 400; letter-spacing: 0.04em; color: var(--cream-58); }
+.footer-mark .glyph { font-style: normal; font-size: 26px; color: var(--cream-75); line-height: 1; }
+.footer-cta { font-size: 12px; letter-spacing: 0.08em; color: var(--dorado); border-bottom: 1px solid var(--dorado); padding-bottom: 3px; }
+.sources { margin-top: 30px; font-size: 12px; color: rgba(245,240,232,0.4); line-height: 1.9; }
+.sources .stitle { display: block; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500; color: rgba(245,240,232,0.5); margin-bottom: 10px; font-size: 10.5px; }
+.copyright { margin-top: 26px; font-size: 11.5px; color: rgba(245,240,232,0.28); }
+
+/* ── REVEAL ─────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .container { padding: 0 28px; }
+  .section-light, .section-arena, .section-dark { padding: 96px 0; }
+  #hero { padding-top: 150px; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .stat-row, .cost-pair { grid-template-columns: 1fr; }
+  footer { padding: 48px 24px 40px; }
+}
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <div class="brand-mark">
-      <span class="a">a</span>
-      <span class="name">adriana buenrostro</span>
+  <!-- ── NAV ── -->
+  <nav id="main-nav">
+    <span class="nav-mark"><span class="glyph">a</span><span>adriana buenrostro</span></span>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#problema">el problema</a></li>
+        <li><a href="#metodologia">método</a></li>
+        <li><a href="#assessment">assessment</a></li>
+        <li><a href="#facilitadora">facilitadora</a></li>
+      </ul>
+      <a class="nav-cta" href="#cierre">Agenda tu diagnóstico</a>
     </div>
-    <a class="nav-cta" href="#contacto">Agenda tu diagnóstico</a>
-  </div>
-</header>
+  </nav>
 
-<main>
+  <main>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <span class="eyebrow reveal">Assessment ejecutivo · Método REA™</span>
-      <h1 class="reveal">Recupera el control de tu recurso más caro: tu tiempo estratégico.</h1>
-      <p class="sub reveal">¿Cuánto de tu semana se va en trabajo que una persona de tu equipo podría hacer — mientras las decisiones que solo tú puedes tomar siguen esperando? Una intervención de 5 semanas, basada en evidencia, diseñada para un solo objetivo: que vuelvas a pensar estratégicamente.</p>
-      <div class="cta-row reveal">
-        <a class="btn" href="#contacto">Agenda tu diagnóstico</a>
-        <span class="cta-note">8 horas de acompañamiento a lo largo de 5 semanas</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- EL PROBLEMA -->
-  <section class="divider-top">
-    <div class="wrap">
-      <span class="eyebrow reveal">El problema</span>
-      <h2 class="section-title reveal">Ocupado no es lo mismo que estratégico.</h2>
-      <p class="lede reveal">Esto no es una opinión: cuando los directivos registran su tiempo real durante una semana, el resultado los sorprende de forma sistemática. Creen que dedican la mitad de su semana a pensar estratégicamente. Los datos muestran otra cosa — el resto se va en reuniones reactivas, correos, aprobaciones e interrupciones.</p>
-
-      <div class="stat-row">
-        <div class="stat reveal">
-          <div class="num">10–20%</div>
-          <div class="label">de la semana de un director se dedica a trabajo estratégico real — el que solo él o ella puede hacer.</div>
-        </div>
-        <div class="stat reveal">
-          <div class="num">23 min</div>
-          <div class="label">es lo que toma recuperar la concentración plena después de cada interrupción.</div>
-          <span class="cite">Mark, Gudith &amp; Klocke — Universidad de California, Irvine (2008)</span>
-        </div>
-      </div>
-
-      <div class="cost-pair">
-        <div class="cost-card reveal">
-          <h3>Costo directo</h3>
-          <p>Cada semana operativa que otra persona de tu equipo podría cubrir es capacidad estratégica del activo más caro de la empresa, usada en trabajo que no le corresponde.</p>
-        </div>
-        <div class="cost-card reveal">
-          <h3>Costo invisible</h3>
-          <p>Las decisiones importantes que se posponen. Las conversaciones estratégicas que nunca ocurren. La dirección que la organización no recibe porque quien debería darla está apagando incendios.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LA METODOLOGÍA -->
-  <section class="divider-top">
-    <div class="wrap">
-      <span class="eyebrow reveal">La metodología</span>
-      <h2 class="section-title reveal">Método REA — Recuperación Estratégica y Atención</h2>
-      <p class="lede reveal">Una intervención ejecutiva que integra los tres marcos de gestión de atención más validados de la última década en un solo sistema progresivo de 5 semanas.</p>
-
-      <div class="pillars">
-        <div class="pillar reveal">
-          <span class="mark">01</span>
-          <div>
-            <h3>Trabajo profundo</h3>
-            <span class="source">Cal Newport — <em>Deep Work</em>, Grand Central Publishing, 2016</span>
-            <p>Por qué la capacidad de concentración sin interrupciones se volvió el activo profesional más escaso — y cómo estructurarla de forma deliberada.</p>
-          </div>
-        </div>
-        <div class="pillar reveal">
-          <span class="mark">02</span>
-          <div>
-            <h3>Esencialismo</h3>
-            <span class="source">Greg McKeown — <em>Essentialism</em>, Crown Business, 2014</span>
-            <p>El marco de decisión que distingue lo vital de lo simplemente bueno — la habilidad con más impacto en organizaciones donde el liderazgo está sobrecargado.</p>
-          </div>
-        </div>
-        <div class="pillar reveal">
-          <span class="mark">03</span>
-          <div>
-            <h3>Captura y revisión sistemática</h3>
-            <span class="source">David Allen — <em>Getting Things Done</em>, Penguin, ed. revisada 2015</span>
-            <p>Captura externa total y revisión semanal estructurada, para liberar la mente de tener que almacenar lo que aún no ha resuelto.</p>
-            <p class="evidence">Las tareas incompletas no registradas consumen recursos cognitivos de fondo de forma continua (efecto Zeigarnik). La captura externa libera esa carga.</p>
+    <!-- ── HERO ── -->
+    <section id="hero" class="section-light">
+      <div class="container">
+        <div class="reveal">
+          <div class="eyebrow"><span>assessment ejecutivo · método rea™</span></div>
+          <h1>Recupera el control de tu recurso más caro: tu tiempo estratégico.</h1>
+          <p class="hero-sub">¿Cuánto de tu semana se va en trabajo que una persona de tu equipo podría hacer — mientras las decisiones que solo tú puedes tomar siguen esperando? Una intervención de 5 semanas, basada en evidencia, diseñada para un solo objetivo: que vuelvas a pensar estratégicamente.</p>
+          <div class="cta-row">
+            <a class="btn" href="#cierre">Agenda tu diagnóstico</a>
+            <span class="cta-note">8 horas de acompañamiento a lo largo de 5 semanas</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="differentiator reveal">
-        <span class="eyebrow">El diferenciador</span>
-        <h3>Ningún marco funciona aplicado de golpe.</h3>
-        <p>Por eso el formato no es una sesión de un día — entusiasmo inmediato, cero cambio real — sino una intervención de 5 semanas con acompañamiento: el ritmo que la evidencia respalda para un cambio de comportamiento que se sostiene.</p>
-        <span class="evidence">Lally et al., University College London — European Journal of Social Psychology (2010): los hábitos requieren en promedio 66 días de práctica consistente para automatizarse.</span>
-      </div>
-    </div>
-  </section>
+    <!-- ── 01 · EL PROBLEMA ── -->
+    <section id="problema" class="section-arena">
+      <div class="container">
+        <div class="ghost">01</div>
+        <div class="reveal">
+          <div class="eyebrow"><span>el problema</span></div>
+          <div class="two-col">
+            <div><h2>Ocupado no es lo mismo que estratégico.</h2></div>
+            <div>
+              <p class="lead">Esto no es una opinión: cuando los directivos registran su tiempo real durante una semana, el resultado los sorprende de forma sistemática. Creen que dedican la mitad de su semana a pensar estratégicamente. Los datos muestran otra cosa — el resto se va en reuniones reactivas, correos, aprobaciones e interrupciones.</p>
+            </div>
+          </div>
 
-  <!-- EL ASSESSMENT -->
-  <section class="divider-top">
-    <div class="wrap">
-      <span class="eyebrow reveal">El assessment</span>
-      <h2 class="section-title reveal">Ocho horas. Cinco semanas. Un sistema que se sostiene solo.</h2>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="num">10–20%</div>
+              <div class="label">de la semana de un director se dedica a trabajo estratégico real — el que solo él o ella puede hacer.</div>
+            </div>
+            <div class="stat">
+              <div class="num">23 min</div>
+              <div class="label">es lo que toma recuperar la concentración plena después de cada interrupción.</div>
+              <span class="cite">Mark, Gudith &amp; Klocke — Universidad de California, Irvine (2008)</span>
+            </div>
+          </div>
 
-      <div class="timeline">
-        <div class="tl-item reveal" data-n="1">
-          <span class="tl-week">Sesión 1 · Semana 1</span>
-          <h3>Diagnóstico y metodología</h3>
-          <ul>
-            <li>Diagnóstico inicial del uso real de tu tiempo</li>
-            <li>Presentación completa de la metodología y sus fundamentos</li>
-            <li>Kit de herramientas: guía + 7 plantillas de trabajo</li>
-            <li>Línea base: tu porcentaje actual de trabajo profundo</li>
-          </ul>
-        </div>
-        <div class="tl-item reveal" data-n="2">
-          <span class="tl-week">Sesión 2 · Semana 2</span>
-          <h3>Captura externa</h3>
-          <ul>
-            <li>Revisión del diagnóstico: dónde se va realmente tu tiempo</li>
-            <li>Implementación del sistema de captura externa</li>
-            <li>Identificación de las decisiones pospuestas que consumen tu capacidad cognitiva</li>
-          </ul>
-        </div>
-        <div class="tl-item reveal" data-n="3">
-          <span class="tl-week">Sesión 3 · Semana 3</span>
-          <h3>Bloques de trabajo profundo</h3>
-          <ul>
-            <li>Diseño del calendario con bloques protegidos</li>
-            <li>Estrategias para defender esos bloques ante la cultura organizacional</li>
-            <li>Definición de tu ritual de concentración personal</li>
-          </ul>
-        </div>
-        <div class="tl-item reveal" data-n="4">
-          <span class="tl-week">Sesión 4 · Semana 4</span>
-          <h3>Revisión semanal y filtro esencialista</h3>
-          <ul>
-            <li>Implementación del ritual de revisión semanal</li>
-            <li>Aplicación del filtro de tres preguntas a tu portafolio de compromisos</li>
-            <li>3 a 5 compromisos identificados para eliminar, delegar o renegociar</li>
-          </ul>
-        </div>
-        <div class="tl-item reveal" data-n="5">
-          <span class="tl-week">Sesión 5 · Semana 5</span>
-          <h3>Consolidación y métricas</h3>
-          <ul>
-            <li>Medición contra la línea base: tu nuevo porcentaje de trabajo profundo</li>
-            <li>Resolución de obstáculos específicos encontrados en el camino</li>
-            <li>Plan de sostenibilidad a 90 días</li>
-            <li>Reporte ejecutivo con resultados medibles</li>
-          </ul>
+          <div class="cost-pair">
+            <div class="cost-card">
+              <h3>Costo directo</h3>
+              <p>Cada semana operativa que otra persona de tu equipo podría cubrir es capacidad estratégica del activo más caro de la empresa, usada en trabajo que no le corresponde.</p>
+            </div>
+            <div class="cost-card">
+              <h3>Costo invisible</h3>
+              <p>Las decisiones importantes que se posponen. Las conversaciones estratégicas que nunca ocurren. La dirección que la organización no recibe porque quien debería darla está apagando incendios.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="deliverables reveal">
-        <h3>Entregables</h3>
-        <ol>
-          <li>Kit completo de herramientas — guía + 7 plantillas de trabajo.</li>
-          <li>Diagnóstico inicial documentado.</li>
-          <li>Reporte final con métricas comparativas, antes / después.</li>
-          <li>Plan de sostenibilidad a 90 días.</li>
-          <li>Acceso directo a la facilitadora entre sesiones para dudas puntuales.</li>
-        </ol>
+    <!-- ── 02 · LA METODOLOGÍA ── -->
+    <section id="metodologia" class="section-light">
+      <div class="container">
+        <div class="ghost">02</div>
+        <div class="reveal">
+          <div class="eyebrow"><span>la metodología</span></div>
+          <div class="two-col">
+            <div><h2>Método REA — Recuperación Estratégica y Atención</h2></div>
+            <div>
+              <p class="lead">Una intervención ejecutiva que integra los tres marcos de gestión de atención más validados de la última década en un solo sistema progresivo de 5 semanas.</p>
+            </div>
+          </div>
+
+          <div class="pos-list">
+            <div class="pos-row">
+              <div class="pos-bar"></div>
+              <div>
+                <h3>01 — Trabajo profundo</h3>
+                <span class="pos-source">Cal Newport — Deep Work, Grand Central Publishing, 2016</span>
+                <p class="body">Por qué la capacidad de concentración sin interrupciones se volvió el activo profesional más escaso — y cómo estructurarla de forma deliberada.</p>
+              </div>
+            </div>
+            <div class="pos-row">
+              <div class="pos-bar"></div>
+              <div>
+                <h3>02 — Esencialismo</h3>
+                <span class="pos-source">Greg McKeown — Essentialism, Crown Business, 2014</span>
+                <p class="body">El marco de decisión que distingue lo vital de lo simplemente bueno — la habilidad con más impacto en organizaciones donde el liderazgo está sobrecargado.</p>
+              </div>
+            </div>
+            <div class="pos-row">
+              <div class="pos-bar"></div>
+              <div>
+                <h3>03 — Captura y revisión sistemática</h3>
+                <span class="pos-source">David Allen — Getting Things Done, Penguin, ed. revisada 2015</span>
+                <p class="body" style="margin-bottom: 14px;">Captura externa total y revisión semanal estructurada, para liberar la mente de tener que almacenar lo que aún no ha resuelto.</p>
+                <p class="pos-evidence">Las tareas incompletas no registradas consumen recursos cognitivos de fondo de forma continua (efecto Zeigarnik). La captura externa libera esa carga.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <p class="result-line reveal" style="text-align: center;">No es aprender sobre productividad. Es pasar de 10–20% a 35–50% de trabajo profundo en cinco semanas — con un sistema propio que se sostiene sin la facilitadora.</p>
-    </div>
-  </section>
-
-  <!-- SOBRE LA FACILITADORA -->
-  <section class="facilitator divider-top">
-    <div class="wrap">
-      <span class="eyebrow reveal">Sobre la facilitadora</span>
-      <h2 class="fname reveal">adriana buenrostro</h2>
-      <div class="role reveal">Estratega de relaciones y de incidencia</div>
-      <p class="reveal">Adriana opera simultáneamente en el mundo corporativo de alto nivel y en el del cambio de comportamiento humano — un cruce poco común que es exactamente el que esta metodología necesita.</p>
-      <p class="reveal">En el terreno corporativo, forma parte del equipo estratégico de <strong>INTERAX</strong>, consultora mexicana de TI B2B con más de 22 años de trayectoria y más de 2,600 proyectos entregados, con acceso directo al nivel directivo y participación en cuentas globales como Tyson Foods, British American Tobacco, Almex y Layher. Conoce de primera mano cómo piensan, deciden y se saturan los directivos, porque trabaja con ellos todos los días.</p>
-      <p class="reveal">En el terreno del aprendizaje, es diseñadora instruccional y facilitadora certificada por la práctica: diseña e imparte programas basados en evidencia — microaprendizaje, práctica espaciada, adopción escalonada de hábitos — tanto para el sector corporativo como para organizaciones de la sociedad civil.</p>
-      <p class="reveal">El Método REA nace de ese cruce: años observando el mismo patrón en directivos de empresas globales — agendas saturadas de trabajo operativo, decisiones pospuestas, la sensación constante de estar ocupado sin avanzar — combinado con el conocimiento técnico de cómo se diseña una intervención de cambio de hábitos que sí funciona.</p>
-    </div>
-  </section>
-
-  <!-- CIERRE / CTA -->
-  <section class="closing" id="contacto">
-    <div class="wrap">
-      <blockquote class="reveal">El Assessment REA es una intervención ejecutiva de 5 semanas, basada en los tres marcos de gestión de atención más validados de la última década, diseñada para una sola cosa: que recuperes el control de tu recurso más caro. No es un curso. Es un cambio medible en cómo opera tu semana.</blockquote>
-      <div class="cta-row reveal">
-        <a class="btn" href="mailto:hola@adrianabuenrostro.com?subject=Assessment%20Ejecutivo%20REA">Agenda tu diagnóstico</a>
-        <span class="cta-note">Respuesta directa, sin intermediarios</span>
+    <!-- ── 03 · EL DIFERENCIADOR ── -->
+    <section id="diferenciador" class="section-arena">
+      <div class="container">
+        <div class="ghost">03</div>
+        <div class="reveal">
+          <div class="eyebrow"><span>el diferenciador</span></div>
+          <blockquote class="core-quote">Ningún marco funciona aplicado de golpe. Por eso el formato no es una sesión de un día — entusiasmo inmediato, cero cambio real — sino una intervención de 5 semanas con acompañamiento.</blockquote>
+          <p class="evidence-note">Lally et al., University College London — European Journal of Social Psychology (2010): los hábitos requieren en promedio 66 días de práctica consistente para automatizarse.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+    <!-- ── 04 · EL ASSESSMENT ── -->
+    <section id="assessment" class="section-light">
+      <div class="container">
+        <div class="ghost">04</div>
+        <div class="reveal">
+          <div class="eyebrow"><span>el assessment</span></div>
+          <h2>Ocho horas. Cinco semanas.<br>Un sistema que se sostiene solo.</h2>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="brand-mark">
-        <span class="a">a</span>
-        <span class="name">adriana buenrostro</span>
+          <div class="timeline">
+            <div class="tl-item" data-n="1">
+              <span class="tl-week">Sesión 1 · Semana 1</span>
+              <h3>Diagnóstico y metodología</h3>
+              <ul>
+                <li>Diagnóstico inicial del uso real de tu tiempo</li>
+                <li>Presentación completa de la metodología y sus fundamentos</li>
+                <li>Kit de herramientas: guía + 7 plantillas de trabajo</li>
+                <li>Línea base: tu porcentaje actual de trabajo profundo</li>
+              </ul>
+            </div>
+            <div class="tl-item" data-n="2">
+              <span class="tl-week">Sesión 2 · Semana 2</span>
+              <h3>Captura externa</h3>
+              <ul>
+                <li>Revisión del diagnóstico: dónde se va realmente tu tiempo</li>
+                <li>Implementación del sistema de captura externa</li>
+                <li>Identificación de las decisiones pospuestas que consumen tu capacidad cognitiva</li>
+              </ul>
+            </div>
+            <div class="tl-item" data-n="3">
+              <span class="tl-week">Sesión 3 · Semana 3</span>
+              <h3>Bloques de trabajo profundo</h3>
+              <ul>
+                <li>Diseño del calendario con bloques protegidos</li>
+                <li>Estrategias para defender esos bloques ante la cultura organizacional</li>
+                <li>Definición de tu ritual de concentración personal</li>
+              </ul>
+            </div>
+            <div class="tl-item" data-n="4">
+              <span class="tl-week">Sesión 4 · Semana 4</span>
+              <h3>Revisión semanal y filtro esencialista</h3>
+              <ul>
+                <li>Implementación del ritual de revisión semanal</li>
+                <li>Aplicación del filtro de tres preguntas a tu portafolio de compromisos</li>
+                <li>3 a 5 compromisos identificados para eliminar, delegar o renegociar</li>
+              </ul>
+            </div>
+            <div class="tl-item" data-n="5">
+              <span class="tl-week">Sesión 5 · Semana 5</span>
+              <h3>Consolidación y métricas</h3>
+              <ul>
+                <li>Medición contra la línea base: tu nuevo porcentaje de trabajo profundo</li>
+                <li>Resolución de obstáculos específicos encontrados en el camino</li>
+                <li>Plan de sostenibilidad a 90 días</li>
+                <li>Reporte ejecutivo con resultados medibles</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="deliverables">
+            <h3>Entregables</h3>
+            <ol>
+              <li>Kit completo de herramientas — guía + 7 plantillas de trabajo.</li>
+              <li>Diagnóstico inicial documentado.</li>
+              <li>Reporte final con métricas comparativas, antes / después.</li>
+              <li>Plan de sostenibilidad a 90 días.</li>
+              <li>Acceso directo a la facilitadora entre sesiones para dudas puntuales.</li>
+            </ol>
+          </div>
+
+          <div class="result-line">
+            <p>No es aprender sobre productividad. Es pasar de 10–20% a 35–50% de trabajo profundo en cinco semanas — con un sistema propio que se sostiene sin la facilitadora.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="sources">
-      <span class="stitle">Fuentes citadas</span>
-      Newport, C. (2016). <em>Deep Work</em>. Grand Central Publishing.<br>
-      McKeown, G. (2014). <em>Essentialism</em>. Crown Business.<br>
-      Allen, D. (2015). <em>Getting Things Done</em> (ed. revisada). Penguin Books.<br>
-      Mark, G., Gudith, D., &amp; Klocke, U. (2008). "The Cost of Interrupted Work." <em>Proceedings of CHI 2008</em>, UC Irvine.<br>
-      Lally, P., van Jaarsveld, C., Potts, H., &amp; Wardle, J. (2010). <em>European Journal of Social Psychology</em>, 40(6), 998–1009.<br>
-      Masicampo, E.J., &amp; Baumeister, R.F. (2011). <em>Journal of Personality and Social Psychology</em>.
-    </div>
-    <div class="copyright">© 2026 Adriana Buenrostro. Assessment Ejecutivo · Método REA™.</div>
-  </div>
-</footer>
+    </section>
 
-<script>
-  document.documentElement.classList.add('js-enabled');
-  const els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
+    <!-- ── 05 · SOBRE LA FACILITADORA ── -->
+    <section id="facilitadora" class="section-dark">
+      <div class="container">
+        <div class="ghost">05</div>
+        <div class="reveal">
+          <div class="eyebrow"><span>sobre la facilitadora</span></div>
+          <h2>adriana buenrostro</h2>
+          <p class="lead" style="margin-bottom: 40px;">Estratega de relaciones y de incidencia</p>
+          <p class="body" style="margin-bottom: 20px;">Adriana opera simultáneamente en el mundo corporativo de alto nivel y en el del cambio de comportamiento humano — un cruce poco común que es exactamente el que esta metodología necesita.</p>
+          <p class="body" style="margin-bottom: 20px;">En el terreno corporativo, forma parte del equipo estratégico de <strong>INTERAX</strong>, consultora mexicana de TI B2B con más de 22 años de trayectoria y más de 2,600 proyectos entregados, con acceso directo al nivel directivo y participación en cuentas globales como Tyson Foods, British American Tobacco, Almex y Layher. Conoce de primera mano cómo piensan, deciden y se saturan los directivos, porque trabaja con ellos todos los días.</p>
+          <p class="body" style="margin-bottom: 20px;">En el terreno del aprendizaje, es diseñadora instruccional y facilitadora certificada por la práctica: diseña e imparte programas basados en evidencia — microaprendizaje, práctica espaciada, adopción escalonada de hábitos — tanto para el sector corporativo como para organizaciones de la sociedad civil.</p>
+          <p class="body">El Método REA nace de ese cruce: años observando el mismo patrón en directivos de empresas globales — agendas saturadas de trabajo operativo, decisiones pospuestas, la sensación constante de estar ocupado sin avanzar — combinado con el conocimiento técnico de cómo se diseña una intervención de cambio de hábitos que sí funciona.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06 · CIERRE ── -->
+    <section id="cierre" class="section-arena">
+      <div class="container">
+        <div class="ghost">06</div>
+        <div class="reveal closing-block">
+          <div class="eyebrow"><span>siguiente paso</span></div>
+          <blockquote class="core-quote">El Assessment REA es una intervención ejecutiva de 5 semanas, basada en los tres marcos de gestión de atención más validados de la última década, diseñada para una sola cosa: que recuperes el control de tu recurso más caro. No es un curso. Es un cambio medible en cómo opera tu semana.</blockquote>
+          <div class="cta-row" style="margin-top: 46px;">
+            <a class="btn" href="mailto:hola@adrianabuenrostro.com?subject=Assessment%20Ejecutivo%20REA">Agenda tu diagnóstico</a>
+            <span class="cta-note">Respuesta directa, sin intermediarios</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <span class="footer-mark"><span class="glyph">a</span><span>adriana buenrostro</span></span>
+        <a class="footer-cta" href="mailto:hola@adrianabuenrostro.com?subject=Assessment%20Ejecutivo%20REA">Agenda tu diagnóstico</a>
+      </div>
+      <div class="sources">
+        <span class="stitle">Fuentes citadas</span>
+        Newport, C. (2016). Deep Work. Grand Central Publishing.<br>
+        McKeown, G. (2014). Essentialism. Crown Business.<br>
+        Allen, D. (2015). Getting Things Done (ed. revisada). Penguin Books.<br>
+        Mark, G., Gudith, D., &amp; Klocke, U. (2008). "The Cost of Interrupted Work." Proceedings of CHI 2008, UC Irvine.<br>
+        Lally, P., van Jaarsveld, C., Potts, H., &amp; Wardle, J. (2010). European Journal of Social Psychology, 40(6), 998–1009.<br>
+        Masicampo, E.J., &amp; Baumeister, R.F. (2011). Journal of Personality and Social Psychology.
+      </div>
+      <div class="copyright">© 2026 Adriana Buenrostro. Assessment Ejecutivo · Método REA™. Documento de uso comercial.</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
       });
-    }, { threshold: 0.12 });
-    els.forEach(el => io.observe(el));
-  } else {
-    els.forEach(el => el.classList.add('in'));
-  }
-</script>
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    const darkSections = document.querySelectorAll('.section-dark');
+    function updateNav() {
+      const anyDark = [...darkSections].some(s => {
+        const r = s.getBoundingClientRect();
+        return r.top <= 72 && r.bottom >= 72;
+      });
+      nav.classList.toggle('on-dark', anyDark);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  </script>
 
 </body>
 </html>
